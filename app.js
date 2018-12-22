@@ -12,7 +12,7 @@
 // Initial array of movies
 var array = ["Tokyo", "Japanese News", "Takeshi's Castle", "Sushi", "Samurai"];
 var searching = "Germany";
-
+var timesclicked = 0
 $('document').ready(function(){
     renderButtons();
 // Calling the renderButtons function to display the intial buttonsrenderButtons();
@@ -23,7 +23,8 @@ console.log(array);
 // displayButtnInfo function re-renders the HTML to display the appropriate content
 function displayButtonInfo() {
     // var searchbutton = $(this).attr("data-info");//SEARCHBUTTON IS DECLARED, BUT NEVER CALLED
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searching + "&api_key=mOHwmsfvB4F0OExkl6KfsvNjDQTd0l8s";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searching + "&api_key=mOHwmsfvB4F0OExkl6KfsvNjDQTd0l8s&limit=10&offset=" + timesclicked;
+    var omdbURL = "https://www.omdbapi.com/?t=" + searching + "&y=&plot=short&apikey=trilogy"
     // Creating an AJAX call for the specific button being clicked
     $.ajax({
         url: queryURL,
@@ -97,7 +98,8 @@ function displayButtonInfo() {
                     console.log("stilled");
                 }
             })
-        });                
+        });    
+                
 }
 
 
@@ -139,8 +141,8 @@ $("#add-button").on("click", function(event) {
 });
 // Adding a click event listener to all elements with a class of "gif-btn"
 $(document).on("click", ".gif-btn", function(){
-    $("#dumpdiv").empty();
-    
+    $("#dumpdiv").append();//adds more gifs BUT NEED DIFFERENT GIFS NOT THE FIRST 10 ALL THE TIME
+    timesclicked+=10;
     searching = $(this).text();
     displayButtonInfo();
     console.log("check");

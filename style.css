@@ -1,0 +1,70 @@
+@media screen and (max-width: 980px) {
+    body {
+        width: 60%;
+        margin: 0 0 0 50px;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    p {
+        text-align: justify;
+        text-indent: 2em;
+        margin: 0 auto 0 auto;
+    }
+    body {
+        margin: auto;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #headshot {
+        float: none;
+        margin: 0 auto 0 auto;
+    }
+}
+
+body {
+    background-image: url("images/background.jpg");
+    
+}
+
+h5 {
+    text-align: center;
+}
+
+.buttons {
+    width:100%;
+    margin:0 auto;
+}
+
+form {
+    float: right;
+}
+
+.gif-btn {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+#add-button {
+    background-color:teal;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px; 
+}
